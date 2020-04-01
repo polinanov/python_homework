@@ -1,4 +1,5 @@
-import doctest
+import pytest
+
 """Morse Code Translator"""
 
 LETTER_TO_MORSE = {
@@ -24,22 +25,21 @@ MORSE_TO_LETTER = {
     for letter, morse in LETTER_TO_MORSE.items()
 }
 
-def encode(message: str) -> str:
+
+def decode(morse_message: str) -> str:
     """
-    Кодирует строку в соответсвие с таблицей азбуки Морзе
-    >>> [encode('MAI-PYTHON-2020')]
-    ['-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- ..--- -----']
-    >>> [encode('POLINA NOVIKOVA')]
-    ['.--. --- .-.. .. -. .-   -. --- ...- .. -.- --- ...- .-']
-    >>> [encode('M3O-117M')]
-    ['-- ...-- --- -....- .---- .---- --... --']
+    Декодирует строку из азбуки Морзе в английский
     """
-    encoded_signs = [
-        LETTER_TO_MORSE[letter] for letter in message
+    decoded_letters = [
+        MORSE_TO_LETTER[letter] for letter in morse_message.split()
     ]
 
-    return ' '.join(encoded_signs)
+    return ''.join(decoded_letters)
 
 
-if __name__ == '__main__':
-    doctest.testmod()
+@pytest.mark.parametrize('test_input,expected', [('-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- ..--- '
+                                                  '-----', 'MAI-PYTHON-2020'), ('... --- ...', 'SOS'), ('-.... -.... '
+                                                                                                        '-....',
+                                                                                                        '666')])
+def test_decode(test_input, expected):
+    assert decode(test_input) == expected
