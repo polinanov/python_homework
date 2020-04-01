@@ -3,7 +3,7 @@
 Trying:  
 [encode('MAI-PYTHON-2020')]  
 Expecting:  
-<p text-indent="1em">['-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- ..--- -----']</p>  
+<p text-indent="20px">['-- .- .. -....- .--. -.-- - .... --- -. -....- ..--- ----- ..--- -----']</p>  
 ok  
 Trying:  
     [encode('POLINA NOVIKOVA')]  
