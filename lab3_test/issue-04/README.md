@@ -1,2 +1,2 @@
 **Запуск**  
-В PyCharm как *pytest*
+1. В PyCharm как *pytest*
