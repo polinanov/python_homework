@@ -53,4 +53,5 @@ def randomize():
 
 def test_intv2_fit_transformr(randomize):
     print(randomize)
-    fit_transform(randomize)
+    result = fit_transform(randomize)
+    assert (len(result) == len(randomize))
