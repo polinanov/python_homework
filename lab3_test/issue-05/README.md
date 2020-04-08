@@ -1,2 +1,2 @@
 **Запуск**  
-1. В PyCharm как *unittest* **with Coverage**
+1. В PyCharm как *unittest* ***with Coverage***
