@@ -41,7 +41,6 @@ def chunks(size, iterable: Iterable):
 
 def first(iterable: Iterable, default_=None):
     return next(islice(iterable, 1), default_)
-    # значение по умолчанию, которое будет напечатано, если мы достигнем конца итератора
 
 def last(iterable: Iterable, default_=None):
     try:
