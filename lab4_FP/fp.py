@@ -7,7 +7,6 @@ def ilenv(iterable: Iterable):
     # return len(list(iterable)))
     return sum(1 for _ in iterable)
 
-
 def flatten(iterable: Iterable):
     for i in list(iterable):
         if isinstance(i, Iterable):
@@ -15,10 +14,8 @@ def flatten(iterable: Iterable):
         else:
             yield i
 
-
 def distinct(iterable: Iterable):
     return list(dict.fromkeys(list(iterable)))
-
 
 def groupbykey(key, iterable: Iterable):
     result = defaultdict(list)
@@ -27,7 +24,6 @@ def groupbykey(key, iterable: Iterable):
         # print('Value: ', value, ':: Partlist: ', plist)
         result[value].append(plist)
     return dict(result)
-
 
 def chunks(size, iterable: Iterable):
     result = []
